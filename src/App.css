@@ -1,26 +1,30 @@
 .app {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background: #000000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
+  position: fixed;
   overflow: hidden;
   color: #ffffff;
+  top: 0;
+  left: 0;
 }
 
 .start-screen {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  gap: 2rem;
+  padding: 1rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 20;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .start-title {
@@ -446,36 +450,36 @@
 
 @media (max-width: 768px) {
   .start-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .start-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .start-instructions {
-    padding: 1.5rem 1.5rem;
-    max-width: 90%;
+    padding: 1rem 1rem;
+    max-width: 95%;
   }
 
   .start-instructions h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .start-instructions li {
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 
   .start-button {
-    padding: 1.2rem 3rem;
-    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
     width: 90%;
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .game-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   .guess-input {
@@ -494,25 +498,141 @@
   }
 
   .result-screen h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+  }
+
+  .game-container {
+    padding: 0.3rem 0.3rem;
+    gap: 0.2rem;
+  }
+
+  .header {
+    padding: 0.2rem 0.3rem;
+  }
+
+  .footer {
+    padding: 0.2rem 0.3rem;
+  }
+
+  .total-corns {
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .attempts-left {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hint-message {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .collected-title {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .start-title {
-    font-size: 2rem;
-  }
-
-  .start-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .game-title {
     font-size: 1.5rem;
   }
 
+  .start-subtitle {
+    font-size: 1rem;
+  }
+
+  .start-instructions h2 {
+    font-size: 1.1rem;
+  }
+
+  .start-instructions li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .start-button {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .game-title {
+    font-size: 1.1rem;
+  }
+
   .attempts-left {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .total-corns {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .hint-message {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .collected-title {
+    font-size: 0.85rem;
+  }
+
+  .result-screen {
+    padding: 1rem 1.5rem;
+    gap: 0.8rem;
+  }
+
+  .result-screen h1 {
+    font-size: 1.5rem;
+  }
+
+  .result-message {
+    font-size: 1rem;
+  }
+
+  .reward-message {
     font-size: 1.2rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .answer-reveal {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .action-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .start-title {
+    font-size: 1.3rem;
+  }
+
+  .start-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .start-instructions {
+    padding: 0.8rem 0.8rem;
+  }
+
+  .start-instructions h2 {
+    font-size: 1rem;
+  }
+
+  .start-instructions li {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .game-container {
+    padding: 0.2rem 0.2rem;
+    gap: 0.15rem;
   }
 }
