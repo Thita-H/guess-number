@@ -1,10 +1,10 @@
 .numeric-keypad {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.4rem;
   align-items: center;
   width: 100%;
-  padding: 0.3rem 0.6rem;
+  padding: 0.5rem 0.8rem;
   background: rgba(139, 92, 246, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -12,16 +12,16 @@
   box-shadow:
     0 0 12px rgba(139, 92, 246, 0.3),
     inset 0 0 12px rgba(139, 92, 246, 0.1);
-  max-width: 200px;
-  width: 85%;
+  max-width: 280px;
+  width: 90%;
   position: relative;
   flex-shrink: 0;
 }
 
 .keypad-display {
   width: 100%;
-  padding: 0.25rem 0.4rem;
-  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #8b5cf6;
   text-align: center;
@@ -31,7 +31,7 @@
   box-shadow:
     0 0 10px rgba(139, 92, 246, 0.3),
     inset 0 0 10px rgba(139, 92, 246, 0.1);
-  min-height: 26px;
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,23 +42,23 @@
 .keypad-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.2rem;
+  gap: 0.35rem;
   width: 100%;
 }
 
 .keypad-button {
-  padding: 0.2rem 0.25rem;
-  font-size: 1rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #ffffff;
   background: rgba(139, 92, 246, 0.2);
   border: 1.5px solid #8b5cf6;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
   text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
-  min-height: 36px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +105,8 @@
 
 .keypad-ok {
   width: 100%;
-  padding: 0.4rem 1rem;
-  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #000000;
   background: linear-gradient(135deg, #8b5cf6, #6366f1);
@@ -117,6 +117,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-height: 48px;
 }
 
 .keypad-ok:hover {
@@ -144,138 +145,164 @@
 /* Large screens (> 428px width) */
 @media (min-width: 429px) {
   .numeric-keypad {
-    padding: 0.35rem 0.7rem;
+    padding: 0.55rem 0.9rem;
+    max-width: 300px;
   }
 
   .keypad-display {
-    font-size: 1.15rem;
-    padding: 0.3rem 0.5rem;
-    min-height: 30px;
+    font-size: 1.4rem;
+    padding: 0.45rem 0.7rem;
+    min-height: 42px;
   }
 
   .keypad-button {
-    padding: 0.25rem 0.3rem;
-    font-size: 1.05rem;
-    min-height: 38px;
+    padding: 0.55rem 0.7rem;
+    font-size: 1.4rem;
+    min-height: 54px;
+  }
+
+  .keypad-grid {
+    gap: 0.4rem;
   }
 
   .keypad-ok {
-    font-size: 1.15rem;
-    padding: 0.45rem 1.15rem;
+    font-size: 1.4rem;
+    padding: 0.65rem 1.3rem;
+    min-height: 52px;
   }
 }
 
 /* Medium screens (390px - 428px) */
 @media (min-width: 390px) and (max-width: 428px) {
-  .keypad-button {
-    font-size: 1.02rem;
-  }
-
-  .keypad-ok {
-    font-size: 1.05rem;
-  }
-}
-
-/* Small screens (< 375px) */
-@media (max-width: 374px) {
   .numeric-keypad {
-    padding: 0.25rem 0.5rem;
-    gap: 0.25rem;
+    max-width: 290px;
   }
 
   .keypad-display {
-    font-size: 0.95rem;
-    padding: 0.2rem 0.35rem;
-    min-height: 24px;
+    font-size: 1.35rem;
   }
 
   .keypad-button {
-    padding: 0.15rem 0.2rem;
-    font-size: 0.95rem;
-    min-height: 32px;
-  }
-
-  .keypad-grid {
-    gap: 0.15rem;
+    font-size: 1.35rem;
+    min-height: 52px;
   }
 
   .keypad-ok {
-    padding: 0.35rem 0.9rem;
-    font-size: 0.95rem;
+    font-size: 1.35rem;
+  }
+}
+
+/* Small screens (360px - 389px) */
+@media (min-width: 360px) and (max-width: 389px) {
+  .numeric-keypad {
+    max-width: 270px;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .keypad-display {
+    font-size: 1.25rem;
+    min-height: 36px;
+  }
+
+  .keypad-button {
+    font-size: 1.25rem;
+    min-height: 48px;
+  }
+
+  .keypad-ok {
+    font-size: 1.25rem;
+    min-height: 46px;
   }
 }
 
 /* Very small screens (< 360px) */
 @media (max-width: 359px) {
   .numeric-keypad {
-    max-width: 180px;
+    max-width: 250px;
+    padding: 0.4rem 0.65rem;
+    gap: 0.3rem;
   }
 
   .keypad-display {
-    font-size: 0.9rem;
+    font-size: 1.15rem;
+    padding: 0.35rem 0.5rem;
+    min-height: 34px;
   }
 
   .keypad-button {
-    font-size: 0.9rem;
-    min-height: 30px;
+    padding: 0.4rem 0.5rem;
+    font-size: 1.15rem;
+    min-height: 44px;
+  }
+
+  .keypad-grid {
+    gap: 0.3rem;
   }
 
   .keypad-ok {
-    font-size: 0.9rem;
+    font-size: 1.15rem;
+    padding: 0.5rem 1rem;
+    min-height: 44px;
   }
 }
 
 /* Landscape mode */
 @media (max-height: 500px) and (orientation: landscape) {
   .numeric-keypad {
-    padding: 0.2rem 0.4rem;
-    gap: 0.2rem;
-    max-width: 160px;
+    padding: 0.3rem 0.5rem;
+    gap: 0.25rem;
+    max-width: 220px;
   }
 
   .keypad-display {
-    font-size: 0.85rem;
-    padding: 0.15rem 0.3rem;
-    min-height: 22px;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.4rem;
+    min-height: 30px;
   }
 
   .keypad-button {
-    padding: 0.1rem 0.15rem;
-    font-size: 0.85rem;
-    min-height: 28px;
+    padding: 0.3rem 0.4rem;
+    font-size: 1.1rem;
+    min-height: 38px;
   }
 
   .keypad-grid {
-    gap: 0.15rem;
+    gap: 0.25rem;
   }
 
   .keypad-ok {
-    padding: 0.25rem 0.7rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 1.1rem;
+    min-height: 38px;
   }
 }
 
 /* Tall screens (> 800px) - Can afford larger keypad */
 @media (min-height: 800px) and (orientation: portrait) {
   .numeric-keypad {
-    padding: 0.4rem 0.75rem;
-    max-width: 220px;
+    padding: 0.6rem 0.9rem;
+    max-width: 320px;
   }
 
   .keypad-display {
-    font-size: 1.15rem;
-    padding: 0.3rem 0.5rem;
-    min-height: 30px;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    min-height: 44px;
   }
 
   .keypad-button {
-    padding: 0.25rem 0.3rem;
-    font-size: 1.1rem;
-    min-height: 40px;
+    padding: 0.6rem 0.75rem;
+    font-size: 1.5rem;
+    min-height: 56px;
+  }
+
+  .keypad-grid {
+    gap: 0.4rem;
   }
 
   .keypad-ok {
-    padding: 0.5rem 1.2rem;
-    font-size: 1.1rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.5rem;
+    min-height: 54px;
   }
 }
