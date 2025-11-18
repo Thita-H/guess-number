@@ -55,10 +55,10 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
     const particlesMaterial = new THREE.PointsMaterial({
-      color: 0x00ffff,
-      size: 0.02,
+      color: 0x8b5cf6, // สีม่วงอวกาศ (Purple space)
+      size: 0.012,     // ลดขนาดจาก 0.02 เป็น 0.012
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.85,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     })
