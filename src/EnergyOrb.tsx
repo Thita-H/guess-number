@@ -27,7 +27,7 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
 
     camera.position.z = 1.5
 
-    const light = new THREE.PointLight(0x00ffff, 1, 10)
+    const light = new THREE.PointLight(0x8b5cf6, 1, 10)
     light.position.set(0, 0, 0)
     lightRef.current = light
     scene.add(light)
@@ -137,37 +137,41 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
       targetSpeedRef.current = 5
 
       if (distance < 10) {
-        material.color.setHex(0x00ff00)
-        material.size = 0.06
+        // Very close - Bright emerald green
+        material.color.setHex(0x10b981)
+        material.size = 0.045
         material.opacity = 1
-        light.color.setHex(0x00ff00)
+        light.color.setHex(0x10b981)
         light.intensity = 3
       } else if (distance < 25) {
-        material.color.setHex(0xffff00)
-        material.size = 0.055
+        // Close - Cyan/Aqua
+        material.color.setHex(0x06b6d4)
+        material.size = 0.04
         material.opacity = 0.95
-        light.color.setHex(0xffff00)
+        light.color.setHex(0x06b6d4)
         light.intensity = 2.5
       } else if (distance < 50) {
-        material.color.setHex(0xff6600)
-        material.size = 0.05
+        // Medium - Blue
+        material.color.setHex(0x3b82f6)
+        material.size = 0.035
         material.opacity = 0.9
-        light.color.setHex(0xff6600)
+        light.color.setHex(0x3b82f6)
         light.intensity = 2
       } else {
-        material.color.setHex(0xff0000)
-        material.size = 0.045
+        // Far - Deep purple
+        material.color.setHex(0x6366f1)
+        material.size = 0.03
         material.opacity = 0.85
-        light.color.setHex(0xff0000)
+        light.color.setHex(0x6366f1)
         light.intensity = 1.5
       }
 
       setTimeout(() => {
         targetSpeedRef.current = 1
-        material.color.setHex(0x00ffff)
-        material.size = 0.03
-        material.opacity = 0.8
-        light.color.setHex(0x00ffff)
+        material.color.setHex(0x8b5cf6) // Back to purple
+        material.size = 0.012
+        material.opacity = 0.85
+        light.color.setHex(0x8b5cf6)
         light.intensity = 1
       }, 1000)
     }

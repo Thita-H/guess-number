@@ -1,40 +1,42 @@
-.keypad-container {
+.numeric-keypad {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
   align-items: center;
-  gap: 0.15rem;
-  padding: 0.4rem 0.8rem;
-  background: rgba(0, 20, 40, 0.8);
+  width: 100%;
+  padding: 0.3rem 0.6rem;
+  background: rgba(139, 92, 246, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 2px solid #00ffff;
+  border-radius: 12px;
+  border: 1.5px solid #8b5cf6;
   box-shadow:
-    0 0 15px rgba(0, 255, 255, 0.3),
-    inset 0 0 15px rgba(0, 255, 255, 0.1);
+    0 0 12px rgba(139, 92, 246, 0.3),
+    inset 0 0 12px rgba(139, 92, 246, 0.1);
   max-width: 200px;
-  width: 80%;
+  width: 85%;
   position: relative;
+  flex-shrink: 0;
 }
 
 .keypad-display {
   width: 100%;
-  padding: 0.3rem 0.5rem;
-  font-size: 1.1rem;
+  padding: 0.25rem 0.4rem;
+  font-size: 1rem;
   font-weight: bold;
-  color: #00ffff;
+  color: #8b5cf6;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  border: 2px solid #00ffff;
+  border-radius: 8px;
+  border: 1.5px solid #8b5cf6;
   box-shadow:
-    0 0 12px rgba(0, 255, 255, 0.3),
-    inset 0 0 12px rgba(0, 255, 255, 0.1);
-  min-height: 28px;
+    0 0 10px rgba(139, 92, 246, 0.3),
+    inset 0 0 10px rgba(139, 92, 246, 0.1);
+  min-height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 0 8px #00ffff;
-  letter-spacing: 0.2rem;
+  text-shadow: 0 0 8px #8b5cf6;
+  letter-spacing: 0.15rem;
 }
 
 .keypad-grid {
@@ -46,132 +48,234 @@
 
 .keypad-button {
   padding: 0.2rem 0.25rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
-  background: rgba(0, 255, 255, 0.15);
-  border: 2px solid #00ffff;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1.5px solid #8b5cf6;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
-  text-shadow: 0 0 4px #00ffff;
-  aspect-ratio: 1.4 / 1;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
+  text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .keypad-button:hover {
-  background: rgba(0, 255, 255, 0.3);
+  background: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 .keypad-button:active {
   transform: scale(0.95);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+}
+
+.keypad-zero {
+  grid-column: 2;
 }
 
 .keypad-clear {
-  background: rgba(255, 100, 100, 0.15);
-  border-color: #ff6464;
-  color: #ff6464;
-  text-shadow: 0 0 4px #ff6464;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
 }
 
 .keypad-clear:hover {
-  background: rgba(255, 100, 100, 0.3);
-  box-shadow: 0 0 15px rgba(255, 100, 100, 0.4);
+  background: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
 }
 
 .keypad-delete {
-  background: rgba(255, 165, 0, 0.15);
-  border-color: #ffa500;
-  color: #ffa500;
-  text-shadow: 0 0 4px #ffa500;
+  background: rgba(251, 146, 60, 0.2);
+  border-color: #fb923c;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(251, 146, 60, 0.5);
 }
 
 .keypad-delete:hover {
-  background: rgba(255, 165, 0, 0.3);
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+  background: rgba(251, 146, 60, 0.35);
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.4);
 }
 
 .keypad-ok {
   width: 100%;
-  padding: 0.45rem 1rem;
-  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #000000;
-  background: linear-gradient(135deg, #00ffff, #00aaff);
-  border: 2px solid #00ffff;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: 1.5px solid #8b5cf6;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
   transition: all 0.3s ease;
-  margin-top: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.keypad-ok:hover:not(:disabled) {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+.keypad-ok:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
 }
 
-.keypad-ok:active:not(:disabled) {
-  transform: translateY(0) scale(0.98);
+.keypad-ok:active {
+  transform: translateY(0);
 }
 
 .keypad-ok:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
-  background: linear-gradient(135deg, #666666, #444444);
+  transform: none;
 }
 
-@media (max-width: 768px) {
-  .keypad-container {
-    max-width: 95%;
-    padding: 0.5rem 0.9rem;
+.keypad-ok:disabled:hover {
+  transform: none;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+
+/* Large screens (> 428px width) */
+@media (min-width: 429px) {
+  .numeric-keypad {
+    padding: 0.35rem 0.7rem;
   }
 
   .keypad-display {
-    font-size: 1.3rem;
-    padding: 0.4rem 0.65rem;
-    min-height: 35px;
+    font-size: 1.15rem;
+    padding: 0.3rem 0.5rem;
+    min-height: 30px;
   }
 
   .keypad-button {
-    padding: 0.2rem 0.25rem;
-    font-size: 1.15rem;
+    padding: 0.25rem 0.3rem;
+    font-size: 1.05rem;
+    min-height: 38px;
   }
 
   .keypad-ok {
-    font-size: 1.3rem;
-    padding: 0.55rem 1.3rem;
+    font-size: 1.15rem;
+    padding: 0.45rem 1.15rem;
   }
 }
 
-@media (max-width: 480px) {
-  .keypad-container {
-    max-width: 90%;
+/* Medium screens (390px - 428px) */
+@media (min-width: 390px) and (max-width: 428px) {
+  .keypad-button {
+    font-size: 1.02rem;
+  }
+
+  .keypad-ok {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small screens (< 375px) */
+@media (max-width: 374px) {
+  .numeric-keypad {
+    padding: 0.25rem 0.5rem;
+    gap: 0.25rem;
   }
 
   .keypad-display {
-    font-size: 1.2rem;
-    padding: 0.3rem 0.55rem;
-    min-height: 28px;
+    font-size: 0.95rem;
+    padding: 0.2rem 0.35rem;
+    min-height: 24px;
   }
 
   .keypad-button {
     padding: 0.15rem 0.2rem;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    min-height: 32px;
   }
 
   .keypad-grid {
-    gap: 0.2rem;
+    gap: 0.15rem;
   }
 
   .keypad-ok {
-    padding: 0.45rem 1.1rem;
-    font-size: 1.2rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small screens (< 360px) */
+@media (max-width: 359px) {
+  .numeric-keypad {
+    max-width: 180px;
+  }
+
+  .keypad-display {
+    font-size: 0.9rem;
+  }
+
+  .keypad-button {
+    font-size: 0.9rem;
+    min-height: 30px;
+  }
+
+  .keypad-ok {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .numeric-keypad {
+    padding: 0.2rem 0.4rem;
+    gap: 0.2rem;
+    max-width: 160px;
+  }
+
+  .keypad-display {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+    min-height: 22px;
+  }
+
+  .keypad-button {
+    padding: 0.1rem 0.15rem;
+    font-size: 0.85rem;
+    min-height: 28px;
+  }
+
+  .keypad-grid {
+    gap: 0.15rem;
+  }
+
+  .keypad-ok {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tall screens (> 800px) - Can afford larger keypad */
+@media (min-height: 800px) and (orientation: portrait) {
+  .numeric-keypad {
+    padding: 0.4rem 0.75rem;
+    max-width: 220px;
+  }
+
+  .keypad-display {
+    font-size: 1.15rem;
+    padding: 0.3rem 0.5rem;
+    min-height: 30px;
+  }
+
+  .keypad-button {
+    padding: 0.25rem 0.3rem;
+    font-size: 1.1rem;
+    min-height: 40px;
+  }
+
+  .keypad-ok {
+    padding: 0.5rem 1.2rem;
+    font-size: 1.1rem;
   }
 }
