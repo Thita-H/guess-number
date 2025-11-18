@@ -3,6 +3,7 @@ import './App.css'
 import SpaceBackground from './SpaceBackground'
 import EnergyOrb from './EnergyOrb'
 import NumericKeypad from './NumericKeypad'
+import { soundEffects } from './utils/soundEffects'
 
 type GameStatus = 'playing' | 'won' | 'gameOver'
 type Feedback = 'higher' | 'lower' | null
@@ -25,6 +26,7 @@ function App() {
   const [gamesPlayed, setGamesPlayed] = useState<number>(0)
 
   const handleStartGame = () => {
+    soundEffects.playStartClick()
     setHasStarted(true)
   }
 
@@ -63,6 +65,19 @@ function App() {
     setDistance(newDistance)
     setOrbActive(true)
 
+    // เล่นเสียงลูกแก้วตามระยะห่าง
+    if (guess === targetNumber) {
+      soundEffects.playWinSound()
+    } else if (newDistance < 10) {
+      soundEffects.playOrbVeryClose()
+    } else if (newDistance < 25) {
+      soundEffects.playOrbClose()
+    } else if (newDistance < 50) {
+      soundEffects.playOrbMedium()
+    } else {
+      soundEffects.playOrbFar()
+    }
+
     setTimeout(() => setOrbActive(false), 1000)
 
     if (guess === targetNumber) {
@@ -76,6 +91,7 @@ function App() {
       setBurntCorns(prev => prev + 1)
 
       if (newAttemptsLeft === 0) {
+        soundEffects.playLoseSound()
         setGameStatus('gameOver')
         setFeedback(null)
       } else {
@@ -85,6 +101,7 @@ function App() {
   }
 
   const handlePlayAgain = () => {
+    soundEffects.playActionClick()
     setTargetNumber(generateRandomNumber())
     setAttemptsLeft(10)
     setBurntCorns(0)
@@ -96,6 +113,7 @@ function App() {
   }
 
   const handleRestart = () => {
+    soundEffects.playActionClick()
     setTargetNumber(generateRandomNumber())
     setAttemptsLeft(10)
     setBurntCorns(0)

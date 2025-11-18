@@ -11,15 +11,15 @@
   box-shadow:
     0 0 15px rgba(0, 255, 255, 0.3),
     inset 0 0 15px rgba(0, 255, 255, 0.1);
-  max-width: 220px;
+  max-width: 200px;
   width: 80%;
   position: relative;
 }
 
 .keypad-display {
   width: 100%;
-  padding: 0.35rem 0.6rem;
-  font-size: 1.2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #00ffff;
   text-align: center;
@@ -29,12 +29,12 @@
   box-shadow:
     0 0 12px rgba(0, 255, 255, 0.3),
     inset 0 0 12px rgba(0, 255, 255, 0.1);
-  min-height: 30px;
+  min-height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-shadow: 0 0 8px #00ffff;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.2rem;
 }
 
 .keypad-grid {
@@ -45,8 +45,8 @@
 }
 
 .keypad-button {
-  padding: 0.15rem 0.2rem;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.25rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #ffffff;
   background: rgba(0, 255, 255, 0.15);
@@ -99,8 +99,8 @@
 
 .keypad-ok {
   width: 100%;
-  padding: 0.5rem 1.2rem;
-  font-size: 1.2rem;
+  padding: 0.45rem 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #000000;
   background: linear-gradient(135deg, #00ffff, #00aaff);
@@ -141,7 +141,7 @@
 
   .keypad-button {
     padding: 0.2rem 0.25rem;
-    font-size: 0.9rem;
+    font-size: 1.15rem;
   }
 
   .keypad-ok {
@@ -163,7 +163,7 @@
 
   .keypad-button {
     padding: 0.15rem 0.2rem;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
 
   .keypad-grid {

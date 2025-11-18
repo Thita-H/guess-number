@@ -18,37 +18,37 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
 
     const currentMount = mountRef.current
     const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, 230 / 230, 0.1, 1000)
+    const camera = new THREE.PerspectiveCamera(75, 127 / 127, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
 
-    renderer.setSize(230, 230)
+    renderer.setSize(127, 127)
     renderer.setPixelRatio(window.devicePixelRatio)
     currentMount.appendChild(renderer.domElement)
 
-    camera.position.z = 3
+    camera.position.z = 1.5
 
     const light = new THREE.PointLight(0x00ffff, 1, 10)
     light.position.set(0, 0, 0)
     lightRef.current = light
     scene.add(light)
 
-    const particlesCount = 800
+    const particlesCount = 2000
     const positions = new Float32Array(particlesCount * 3)
     const velocities = new Float32Array(particlesCount * 3)
 
     for (let i = 0; i < particlesCount; i++) {
       const theta = Math.random() * Math.PI * 2
       const phi = Math.acos(2 * Math.random() - 1)
-      const radius = 0.8 + Math.random() * 0.2
+      const radius = 0.9 + Math.random() * 0.1
 
       const i3 = i * 3
       positions[i3] = radius * Math.sin(phi) * Math.cos(theta)
       positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta)
       positions[i3 + 2] = radius * Math.cos(phi)
 
-      velocities[i3] = (Math.random() - 0.5) * 0.002
-      velocities[i3 + 1] = (Math.random() - 0.5) * 0.002
-      velocities[i3 + 2] = (Math.random() - 0.5) * 0.002
+      velocities[i3] = (Math.random() - 0.5) * 0.001
+      velocities[i3 + 1] = (Math.random() - 0.5) * 0.001
+      velocities[i3 + 2] = (Math.random() - 0.5) * 0.001
     }
 
     const particlesGeometry = new THREE.BufferGeometry()
@@ -56,9 +56,9 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
 
     const particlesMaterial = new THREE.PointsMaterial({
       color: 0x00ffff,
-      size: 0.03,
+      size: 0.02,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.9,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     })
@@ -177,8 +177,8 @@ const EnergyOrb = ({ distance, isActive }: EnergyOrbProps) => {
     <div
       ref={mountRef}
       style={{
-        width: '230px',
-        height: '230px',
+        width: '127px',
+        height: '127px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 10
